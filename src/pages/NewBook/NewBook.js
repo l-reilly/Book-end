@@ -3,7 +3,7 @@ import React from "react";
 import { createbook, uploadImage } from "../../api";
 
 function NewBook() {
-  const [state, setState] = React.useState({ title: "", description: "", author: "", ISBN: "", genre: ""});
+  const [state, setState] = React.useState({ title: "", description: "", author: "", ISBN: "", genre: "" });
   const [file, setFile] = React.useState();
   //const history = useHistory();
 
@@ -26,13 +26,14 @@ function NewBook() {
     setState({ ...state, [name]: value });
   };
 
-  const handleFileChange = ({ target }) => {
+  /*const handleFileChange = ({ target }) => {
     const [file] = target.files;
     setFile(file);
-  };
+  }; */
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form //onSubmit={handleSubmit}
+    >
       <label htmlFor="title">Title</label>
       <input
         name="title"
@@ -40,6 +41,7 @@ function NewBook() {
         onChange={handleChange}
         value={state.title}
       />
+      {/* 
       <label htmlFor="author">Author</label>
       <input
         name="author"
@@ -72,7 +74,8 @@ function NewBook() {
     type="file" 
     name="imageUrl" 
     onChange={handleFileChange}
-     />
+     /> 
+     comment here */}
       <button type="submit">Create book</button>
     </form>
   );

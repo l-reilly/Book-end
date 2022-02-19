@@ -1,6 +1,6 @@
 import React from "react";
 //import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
-import { createbook, uploadImage } from "../../api";
+import { createBook, uploadImage } from "../../api";
 
 function NewBook() {
   const [state, setState] = React.useState({ title: "", description: "", author: "", ISBN: "", genre: "" });
@@ -13,7 +13,7 @@ function NewBook() {
     formData.append("imageUrl", file, file.name);
     const { data: imageData } = await uploadImage(formData);
     console.log("imageData", imageData);
-    const { data } = await createbook({
+    const { data } = await createBook({
       ...state,
       imageUrl: imageData.imageUrl,
     })

@@ -1,11 +1,11 @@
 import React from "react";
-import { getbooks } from "../../api";
+import { getBooks } from "../../api";
 import { UseFetch } from "../../hooks/useFetch";
 import { Suspense } from "../../components/Suspense";
 import { Link } from "react-router-dom";
 
 function books() {
-  const { data, loading, error } = UseFetch(getbooks);
+  const { data, loading, error } = UseFetch(getBooks);
 
   return (
     <Suspense noData={!data && !loading} error={error} loading={loading}>
@@ -14,6 +14,7 @@ function books() {
         {data?.map((book) => (
           <div key={book._id}>
             <p>{book.title}</p>
+            <img src={book.imageUrl} alt="cover" className="books-cover"/>
             <Link to={`/books/${book._id}`}>show more</Link>
           </div>
         ))}

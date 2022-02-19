@@ -7,7 +7,7 @@ function NewBook() {
   const [file, setFile] = React.useState();
   //const history = useHistory();
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event, res) => {
     event.preventDefault();
     const formData = new FormData();
     formData.append("imageUrl", file, file.name);
@@ -16,7 +16,7 @@ function NewBook() {
     const { data } = await createbook({
       ...state,
       imageUrl: imageData.imageUrl,
-    });
+    })
     //history.push("/books")
     console.log("data", data);
   };
@@ -26,13 +26,13 @@ function NewBook() {
     setState({ ...state, [name]: value });
   };
 
-  /*const handleFileChange = ({ target }) => {
+  const handleFileChange = ({ target }) => {
     const [file] = target.files;
     setFile(file);
-  }; */
+  }; 
 
   return (
-    <form //onSubmit={handleSubmit}
+    <form onSubmit={handleSubmit}
     >
       <label htmlFor="title">Title</label>
       <input
@@ -41,7 +41,7 @@ function NewBook() {
         onChange={handleChange}
         value={state.title}
       />
-      {/* 
+      
       <label htmlFor="author">Author</label>
       <input
         name="author"
@@ -75,7 +75,6 @@ function NewBook() {
     name="imageUrl" 
     onChange={handleFileChange}
      /> 
-     comment here */}
       <button type="submit">Create book</button>
     </form>
   );

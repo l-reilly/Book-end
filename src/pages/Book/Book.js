@@ -5,6 +5,7 @@ import { getBookById } from "../../api";
 import { Suspense } from "../../components/Suspense";
 import { deleteBook } from "../../api"
 import { editBook } from "../../api"
+import { Link } from "react-router-dom"
 
 function Book() {
   const { bookId } = useParams();
@@ -20,7 +21,7 @@ function Book() {
       <p>{data?.description}</p>
       {data?.imageUrl && <img src={data?.imageUrl} alt="cover"/>}
       <button onClick={() => deleteBook(bookId)}>Delete</button>
-      <button onClick={() => editBook(bookId)}>Edit Book</button>
+      <Link to={`/books/${data?._id}/update`}>Update informations</Link>
       <button>Add to your favorites</button>
     </Suspense>
   );

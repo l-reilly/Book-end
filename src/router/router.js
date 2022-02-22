@@ -6,6 +6,7 @@ import { Main } from "../pages/Main";
 import { NewBook } from "../pages/NewBook";
 import { Books } from "../pages/Books";
 import { Book } from "../pages/Book";
+import { EditBook } from "../pages/EditBook"
 
 function AppRouter() {
   return (
@@ -16,14 +17,17 @@ function AppRouter() {
       <GuestRoute path="/signup" exact>
         <Auth />
       </GuestRoute>
-      <AppRoute path="/books/:bookId">
+      <AppRoute exact path="/books/:bookId">
         <Book />
       </AppRoute>
-      <AppRoute path="/books">
+      <AppRoute exact path="/books">
         <Books />
       </AppRoute>
-      <AppRoute path="/new-book">
+      <AppRoute exact path="/new-book">
         <NewBook />
+      </AppRoute>
+      <AppRoute exact path="/books/:bookId/update">
+        <EditBook />
       </AppRoute>
       <AppRoute exact path="/">
         <Main />

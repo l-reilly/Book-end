@@ -2,13 +2,13 @@ import React from "react";
 //import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { updateBook, uploadImage } from "../../api";
 import { useParams } from "react-router-dom"
-import { useFetch } from "../../hooks/useFetch"
+import { UseFetch } from "../../hooks/useFetch"
 
 function EditBook() {
   const [state, setState] = React.useState({ title: "", description: "", author: "", ISBN: "", genre: "" });
   const [file, setFile] = React.useState();
   const { bookId } = useParams() 
-  const { data, loading, error } = useFetch(
+  const { data, loading, error } = UseFetch(
     () => updateBook(bookId),
     [bookId]
   );

@@ -19,7 +19,3 @@ export function getBookById(bookId) {
 export function deleteBook(bookId, book) {
   return api.delete(`/books/${bookId}`, book)
 }
-
-export function editBook(bookId) {
-  return api.put(`/books/${bookId}`)
-}

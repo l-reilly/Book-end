@@ -11,7 +11,7 @@ function books() {
 
   return (
     <Suspense noData={!data && !loading} error={error} loading={loading}>
-      <h2>books</h2>
+      <h2>Books</h2>
       <div>
         {data?.map((book) => (
           <div key={book._id}>

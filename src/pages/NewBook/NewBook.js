@@ -1,12 +1,10 @@
 import React from "react";
-//import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { createBook, uploadImage } from "../../api";
 import { useHistory } from "react-router-dom"
 
 function NewBook() {
   const [state, setState] = React.useState({ title: "", description: "", author: "", ISBN: "", genre: "" });
   const [file, setFile] = React.useState();
-  //const history = useHistory();
   const history = useHistory()
   const handleSubmit = async (event, res) => {
     event.preventDefault();
@@ -20,7 +18,6 @@ function NewBook() {
     }).then(() => {
       history.push("/books")
     })
-    //history.push("/books")
     console.log("data", data);
   };
 

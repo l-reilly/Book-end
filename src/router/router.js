@@ -7,6 +7,8 @@ import { NewBook } from "../pages/NewBook";
 import { Books } from "../pages/Books";
 import { Book } from "../pages/Book";
 import { EditBook } from "../pages/EditBook"
+import { UserProfile } from "../pages/User-profile"
+//import { Search } from "../pages/Search";
 
 function AppRouter() {
   return (
@@ -31,6 +33,9 @@ function AppRouter() {
       </AppRoute>
       <AppRoute exact path="/">
         <Main />
+      </AppRoute>
+      <AppRoute exact path="/user-profile">
+        <UserProfile />
       </AppRoute>
     </Switch>
   );

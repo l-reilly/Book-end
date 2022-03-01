@@ -1,32 +1,30 @@
 import React from "react";
-//import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
-import { updateBook, uploadImage } from "../../api";
-import { useParams } from "react-router-dom"
-import { UseFetch } from "../../hooks/useFetch"
+import { updateBook, getBookById, uploadImage } from "../../api";
+import { useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 function EditBook() {
-  const [state, setState] = React.useState({ title: "", description: "", author: "", ISBN: "", genre: "" });
+  const { bookId } = useParams();
+  const [state, setState] = React.useState({
+    title: "",
+    author: "",
+    description: "",
+    ISBN: "",
+    genre: "",
+  });
   const [file, setFile] = React.useState();
-  const { bookId } = useParams() 
-  const { data, loading, error } = UseFetch(
-    () => updateBook(bookId),
-    [bookId]
-  );
-  //const history = useHistory();
 
-  const handleSubmit = async (event, res) => {
-    event.preventDefault();
-    const formData = new FormData();
-    formData.append("imageUrl", file, file.name);
-    const { data: imageData } = await uploadImage(formData);
-    console.log("imageData", imageData);
-    const { data } = await updateBook({
-      ...state,
-      imageUrl: imageData.imageUrl,
-    })
-    //history.push("/books")
-    console.log("data", data);
-  };
+  const history = useHistory();
+
+  async function getBookInfo() {
+    const { data } = await getBookById(bookId);
+    setState(data);
+    console.log("book data", data);
+  }
+
+  React.useEffect(() => {
+    getBookInfo();
+  }, []);
 
   const handleChange = ({ target }) => {
     const { name, value } = target;
@@ -36,59 +34,46 @@ function EditBook() {
   const handleFileChange = ({ target }) => {
     const [file] = target.files;
     setFile(file);
-  }; 
+  };
+
+  const handleSubmit = async (event) => {
+    let imageUrl;
+    event.preventDefault();
+    if (file) {
+      const formData = new FormData();
+      formData.append("imageUrl", file);
+      const { data } = await uploadImage(formData);
+      imageUrl = data.imageUrl;
+    }
+
+    const { data } = await updateBook(bookId, state, imageUrl);
+    console.log("data", data);
+    history.push("/books");
+  };
 
   return (
-    <form onSubmit={handleSubmit}
-    >
-      <label htmlFor="title">Title</label>
-      <input
-        name="title"
-        required
-        onChange={handleChange}
-        value={state.title}
-        placeholder={data?.title}
-      />
-      
-      <label htmlFor="author">Author</label>
-      <input
-        name="author"
-        required
-        onChange={handleChange}
-        value={state.author}
-        placeholder={data?.author}
-      />
-      <label htmlFor="description">Description</label>
-      <input
-        name="description"
-        required
-        onChange={handleChange}
-        value={state.description}
-        placeholder={data?.description}
-      />
-      <label htmlFor="ISBN">ISBN</label>
-      <input
-        name="ISBN"
-        required
-        onChange={handleChange}
-        value={state.ISBN}
-        placeholder={data?.ISBN}
-      />
-      <label htmlFor="genre">Genre</label>
-      <input
-        name="genre"
-        required
-        onChange={handleChange}
-        value={state.genre}
-        placeholder={data?.genre}
-      />
-     <input 
-    type="file" 
-    name="imageUrl" 
-    onChange={handleFileChange}
-     /> 
-      <button type="submit">Update book</button>
-    </form>
+    <div>
+      <form className="Form" onSubmit={handleSubmit}>
+        <label htmlFor="title">Title</label>
+        <input name="title" onChange={handleChange} value={state.title} />
+
+        <label htmlFor="description">Description</label>
+        <input name="description" onChange={handleChange} value={state.description} />
+
+        <label htmlFor="author">Author</label>
+        <input name="author" onChange={handleChange} value={state.author} />
+        
+        <label htmlFor="ISBN">ISBN</label>
+        <input name="ISBN" onChange={handleChange} value={state.ISBN}
+        />
+        <label htmlFor="genre">Genre</label>
+        <input name="genre" onChange={handleChange} value={state.genre} />
+       
+        <input type="file" name="imageUrl" onChange={handleFileChange} />
+
+        <button type="submit">Update Book</button>
+      </form>
+    </div>
   );
 }
 

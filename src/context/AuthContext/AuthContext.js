@@ -9,6 +9,7 @@ function getSessionUser() {
   return null;
 }
 
+
 function removeUser() {
   sessionStorage.removeItem("user");
 }

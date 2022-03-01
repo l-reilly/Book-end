@@ -19,6 +19,12 @@ function Navbar() {
         <Link style={margin} to="/new-book">
           Add a Book
         </Link>
+        <Link style={margin} to ="/user-profile">
+          Profile
+        </Link>
+        <Link style={margin} to ="/search">
+        Search
+        </Link>
         <button style={margin} onClick={handleLogout}>
           logout
         </button>

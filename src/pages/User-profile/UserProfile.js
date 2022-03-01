@@ -11,11 +11,6 @@ function UserProfile() {
       <p>Email: {user?.email}</p>
       <h3>Liked Books:</h3>
       <ul>
-       {user.books?.map((book, i) => {
-           return(
-               <li key={i}>Title: {book.title}</li>
-           )
-       })}
       </ul>
     </div>
   );

@@ -6,7 +6,8 @@ import { Suspense } from "../../components/Suspense";
 import { deleteBook } from "../../api"
 import { Link } from "react-router-dom"
 import { useHistory } from "react-router-dom"
-import { useState } from "react"
+//import { useState } from "react"
+//import { AddFavorite } from "../../components/Favorites/AddFavorite/AddFavorite"
 
 
 function Book() {
@@ -15,22 +16,14 @@ function Book() {
     () => getBookById(bookId),
     [bookId]
   );
-  const [favorites, setFavorites] = useState([]);
-  useEffect(() => {
-    setFavorites(data)
-  }, []);
+ 
   const history = useHistory()
   async function handleDelete() {
     deleteBook(bookId).then(() => {
       history.push("/books")
     })
   }
-  function handleFavorite(id){
-    const newFavorites = favorites.map(book => {
-      return book.id === id ? { ...book, favorite:!book.favorite } : book;
-    })
-    setFavorites(newFavorites)
-  }
+  
 
   return (
     <Suspense error={error} loading={loading} noData={!data && !loading}>
@@ -40,7 +33,6 @@ function Book() {
       {data?.imageUrl && <img src={data?.imageUrl} alt="cover"/>}
       <button onClick={handleDelete}>Delete</button>
       <Link to={`/books/${data?._id}/update`}>Update information</Link>
-      <button onClick={() => {handleFavorite(bookId)}}>Add to your favorites</button>
     </Suspense>
   );
 }

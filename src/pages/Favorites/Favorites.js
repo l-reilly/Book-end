@@ -13,17 +13,13 @@ function Favorites() {
           return (
             <div key={favorite._id}>
               {favorite.book?.imageUrl && (
-                <a href={`/favorites/${favorite}._id}`}>
                   <img src={favorite.book?.imageUrl} alt="cover"/>
-                </a>
               )}
               <div>
                 {favorite.book?.title && (
-                  <a href={`/favorites/${favorite._id}`}>
                     <h1>
                       {favorite.book?.title}
                     </h1>
-                  </a>
                 )}
               </div>
             </div>

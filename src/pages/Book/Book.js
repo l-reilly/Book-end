@@ -40,9 +40,9 @@ function Book() {
       {data?.imageUrl && <img src={data?.imageUrl} alt="cover"/>}
       <button onClick={handleDelete}>Delete</button>
       <Link to={`/books/${data?._id}/update`}>Update information</Link>
-     {/* <form onSubmit={handleFavorite}>
+     <form onSubmit={handleFavorite}>
       <button type="submit">Save to your favorites</button>
-      </form>*/}
+      </form>
     </Suspense>
   );
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { getBooks } from "../../api";
+import { getBooks } from "../../api/books";
 import { UseFetch } from "../../hooks/useFetch";
 import { Suspense } from "../../components/Suspense";
 import { Link } from "react-router-dom";
@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 function books() {
   const { data, loading, error } = UseFetch(getBooks);
   
-
   return (
     <Suspense noData={!data && !loading} error={error} loading={loading}>
       <h2>Books</h2>

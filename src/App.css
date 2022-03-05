@@ -46,3 +46,114 @@
   height: 50px;
   width: auto;
 }
+
+
+.book-card{
+  display: flex;
+  flex-direction: column;
+  margin: 10px auto;
+  background-color: whitesmoke;
+  border-radius: 3px;
+  width: 25%;
+  justify-content: center;
+  align-items: center;
+  border-style: double;
+  padding-top: 3%;
+}
+
+.book-card a:link {
+  color: black;
+  font-weight: 900;
+}
+.book-card a:visited {
+  color:#273C2C
+}
+
+
+.book-card img {
+  max-width: 50%;
+  object-fit: cover;
+}
+
+
+.search {
+  height: 35px;
+  width: 350px;
+  font-family: 'Merriweather', serif;
+}
+
+.all-books{
+  display: inline-grid;
+  font-family: 'Merriweather', serif;
+}
+
+.add-book {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: 473423;
+  font-family: 'Merriweather', serif;
+}
+
+.add-book h1 {
+  font-family: 'Merriweather', serif;
+  font-weight: 900;
+  border:double #273C2C;
+  padding: 2%;
+}
+
+.button {
+  background-color: #273C2C;
+  border:solid #000 3px;
+  border-top-left-radius:70% 60% ;
+  border-bottom-right-radius:70% 60%;
+  -moz-border-top-left-radius:70% 50%;
+  -moz-border-bottom-right-radius:70% 50%;
+  color: #F2E6DA;
+  font-family: 'Merriweather', serif;
+}
+
+.main-page{
+  font-family: 'Merriweather', serif;
+  display: flex;
+  flex-direction: column;
+}
+.main-page h1{
+  color: #473423;
+}
+.main-page img {
+  width: 90%;
+}
+
+.nav-loggedin{
+  font-family: 'Merriweather', serif;
+  font-size: larger;
+  background-color: #AA9079;
+  color: #F2E6DA;
+  padding: 10px;
+}
+.nav-loggedin a:visited {
+  color: #F2E6DA
+}
+
+.books-page{
+  font-family: 'Merriweather', serif;
+}
+
+.nav-loggedin button{
+  font-family: 'Merriweather', serif;
+  background-color: whitesmoke;
+  border: double;
+}
+.book-info{
+  font-family: 'Merriweather', serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.book-info h1{
+  font-weight: 900;
+  border: double;
+  width: 50%
+}

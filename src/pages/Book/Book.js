@@ -34,8 +34,8 @@ function Book() {
 
   return (
     <Suspense error={error} loading={loading} noData={!data && !loading}>
-      <h2>Book</h2>
-      <p>{data?.title}</p>
+    <div className="book-info">
+      <h1>{data?.title}</h1>
       <p>{data?.description}</p>
       {data?.imageUrl && <img src={data?.imageUrl} alt="cover"/>}
       <button onClick={handleDelete}>Delete</button>
@@ -43,6 +43,7 @@ function Book() {
      <form onSubmit={handleFavorite}>
       <button type="submit">Save to your favorites</button>
       </form>
+      </div>
     </Suspense>
   );
 }

@@ -16,16 +16,19 @@ function Books() {
   book.title.toLowerCase().includes(searchWord);
   return (
     <Suspense noData={!data && !loading} error={error} loading={loading}>
-      <div>
-      <h2>Books</h2>
-        <input className="search" type="text" name="search" id="search" placeholder="search by title"
+      <div className="books-page">
+      <h2>All Books</h2>
+        <input className="search" type="text" name="search" id="search" placeholder="Search by title"
         value={searchWord} onChange={handleSearch} />
-      <div className="Search-books">
+      <div className="all-books">
       {data?.filter(searchedWord).map((book) => (
-        <div key={book._id}>
-        <img src={book.imageUrl} alt="cover" className="books-search"/>
+        <div key={book._id} className="book-card">
+        <img src={book.imageUrl} alt="cover" />
         <a href={`/books/${book._id}`}>{book.title}</a>
+        <h3>Author: {book.author}</h3>
+        <h3>Description: {book.description}</h3>
         </div>
+        
       ))}
       </div>
       </div>

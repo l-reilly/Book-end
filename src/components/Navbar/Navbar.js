@@ -9,7 +9,7 @@ function Navbar() {
 
   if (user) {
     return (
-      <div>
+      <div className="nav-loggedin">
         <Link style={margin} to="/">
           Home
         </Link>
@@ -22,11 +22,8 @@ function Navbar() {
         <Link style={margin} to ="/user-profile">
           Profile
         </Link>
-        <Link style={margin} to ="/search">
-        Search
-        </Link>
         <button style={margin} onClick={handleLogout}>
-          logout
+          Logout
         </button>
       </div>
     );

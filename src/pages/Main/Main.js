@@ -4,15 +4,21 @@ import { useAuth } from "../../context/AuthContext";
 
 function Main() {
   const { user } = useAuth();
+
   return (
-    <div>
+    <div className="main-page" >
+    <div clasName="white-box">
       <h1>Welcome to Book End {user?.email}!</h1>
-      <h2>Featured Books</h2>
       <div className="catcher">
-        <h2>The Catcher in the Rye</h2>
-        <img src="https://bizweb.dktcdn.net/100/326/228/products/thecatcherintheryejdsalinger.jpg?v=1546509944720" alt="book cover"/>
-        <Link to ="/books/6210bc5441ffdf9b060151eb">Check it out!</Link>
-        <Link to="/books">See all books</Link>
+      <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bGlicmFyeXxlbnwwfHwwfHw%3D&w=1000&q=80" alt="library" />
+      <a href="/books">
+      <button className="button" style={{
+        height: '70px',
+        width: '150px',
+        fontSize: '20px'
+      }}>Enter the library</button>
+      </a>
+        </div>
       </div>
     </div>
   );

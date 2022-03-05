@@ -32,51 +32,104 @@ function NewBook() {
   }; 
 
   return (
+    <div className="add-book">
+    <h1>Add A New Book to the Library</h1>
     <form onSubmit={handleSubmit}
     >
-      <label htmlFor="title">Title</label>
+      <label htmlFor="title">Title:</label>
       <input
         name="title"
         required
         onChange={handleChange}
         value={state.title}
+        style={{
+          marginTop: '10%',
+          marginBottom: '10%',
+          marginLeft: '2%',
+          height: '25px',
+          width: '300px',
+          fontSize: '15px'
+        }}
       />
-      
-      <label htmlFor="author">Author</label>
+      <br></br>
+      <label htmlFor="author">Author:</label>
       <input
         name="author"
         required
         onChange={handleChange}
         value={state.author}
+        style={{
+          marginTop: '3%',
+          marginBottom: '10%',
+          marginLeft: '2%',
+          height: '25px',
+          width: '300px',
+          fontSize: '15px'
+        }}
       />
-      <label htmlFor="description">Description</label>
+      <br></br>
+      <label htmlFor="description">Description:</label>
       <input
         name="description"
         required
         onChange={handleChange}
         value={state.description}
+        style={{
+          marginTop: '3%',
+          marginBottom: '10%',
+          marginLeft: '2%',
+          height: '25px',
+          width: '300px',
+          fontSize: '15px'
+        }}
       />
-      <label htmlFor="ISBN">ISBN</label>
+      <br></br>
+      <label htmlFor="ISBN">ISBN:</label>
       <input
         name="ISBN"
         required
         onChange={handleChange}
         value={state.ISBN}
+        style={{
+          marginTop: '3%',
+          marginBottom: '10%',
+          marginLeft: '2%',
+          height: '25px',
+          width: '300px',
+          fontSize: '15px'
+        }}
       />
-      <label htmlFor="genre">Genre</label>
+      <br></br>
+      <label htmlFor="genre">Genre:</label>
       <input
         name="genre"
         required
         onChange={handleChange}
         value={state.genre}
+        style={{
+          marginTop: '3%',
+          marginBottom: '10%',
+          marginLeft: '2%',
+          height: '25px',
+          width: '300px',
+          fontSize: '15px',
+        }}
       />
      <input 
     type="file" 
     name="imageUrl" 
-    onChange={handleFileChange}
-     /> 
-      <button type="submit">Create book</button>
+    onChange={handleFileChange}/> 
+     <br></br>
+      <button type="submit" className="button"
+      style={{
+          marginTop: '5%',
+          marginBottom: '10%',
+          marginLeft: '2%',
+          height: '50px',
+          width: '175px',
+        }}>Create book</button>
     </form>
+    </div>
   );
 }
 

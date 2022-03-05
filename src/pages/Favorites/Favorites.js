@@ -2,10 +2,14 @@ import React from "react";
 import { getFavorites } from "../../api";
 import { UseFetch } from "../../hooks/useFetch";
 import { Suspense } from "../../components/Suspense";
+//import { useHistory } from "react-router-dom";
+
 
 function Favorites() {
   const { data, loading, error } = UseFetch(getFavorites);
   console.log("favorites", data);
+
+
   return (
     <Suspense noData={!data && !loading} error={error} loading={loading}>
       <div>
@@ -13,13 +17,17 @@ function Favorites() {
           return (
             <div key={favorite._id}>
               {favorite.book?.imageUrl && (
+                  <a href={`/books/${favorite.book?._id}`}>
                   <img src={favorite.book?.imageUrl} alt="cover"/>
+                  </a>
               )}
               <div>
                 {favorite.book?.title && (
-                    <h1>
+                    <a href={`/books/${favorite.book?._id}`}>
+                     <h1>
                       {favorite.book?.title}
                     </h1>
+                    </a>
                 )}
               </div>
             </div>

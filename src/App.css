@@ -54,7 +54,6 @@
   margin: 10px auto;
   background-color: whitesmoke;
   border-radius: 3px;
-  width: 25%;
   justify-content: center;
   align-items: center;
   border-style: double;
@@ -83,8 +82,9 @@
 }
 
 .all-books{
-  display: inline-grid;
-  font-family: 'Merriweather', serif;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 16px;
 }
 
 .add-book {
@@ -106,10 +106,6 @@
 .button {
   background-color: #273C2C;
   border:solid #000 3px;
-  border-top-left-radius:70% 60% ;
-  border-bottom-right-radius:70% 60%;
-  -moz-border-top-left-radius:70% 50%;
-  -moz-border-bottom-right-radius:70% 50%;
   color: #F2E6DA;
   font-family: 'Merriweather', serif;
 }
@@ -156,4 +152,30 @@
   font-weight: 900;
   border: double;
   width: 50%
+}
+.book-info img{
+  height: 500px;
+}
+.book-info button{
+  width: 200px;
+  height: 30px;
+  font-family: 'Merriweather', serif;
+  margin: 10px;
+  background-color:#AA9079;
+  color:#F2E6DA;
+  font-weight: 800;
+}
+.profile-page{
+  font-family: 'Merriweather', serif;
+}
+.button-space{
+  margin-top: 15px;
+  margin-bottom: 15px;
+  display: flex;
+}
+.authForm{
+  display: flex;
+  justify-content: center;
+  padding: 5%;
+  font-family: 'Merriweather', serif;
 }

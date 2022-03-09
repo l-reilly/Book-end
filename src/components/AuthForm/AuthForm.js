@@ -12,6 +12,7 @@ function AuthForm({ onSubmit, submitMessage }) {
     onSubmit(state);
   };
   return (
+    <div className="authForm">
     <form onSubmit={handleSubmit}>
       <label htmlFor="email">Email</label>
       <input
@@ -21,6 +22,7 @@ function AuthForm({ onSubmit, submitMessage }) {
         value={state.email}
         onChange={handleChange}
       />
+  
       <label htmlFor="password">Password</label>
       <input
         required
@@ -29,8 +31,9 @@ function AuthForm({ onSubmit, submitMessage }) {
         value={state.password}
         onChange={handleChange}
       />
-      <button type="submit">{submitMessage}</button>
+      <button className="button" type="submit">{submitMessage}</button>
     </form>
+    </div>
   );
 }
 

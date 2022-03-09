@@ -55,23 +55,65 @@ function EditBook() {
     <div>
       <form className="Form" onSubmit={handleSubmit}>
         <label htmlFor="title">Title</label>
-        <input name="title" onChange={handleChange} value={state.title} />
-
+        <input name="title" onChange={handleChange} value={state.title} style={{
+          marginTop: '10%',
+          marginBottom: '10%',
+          marginLeft: '2%',
+          height: '25px',
+          width: '300px',
+          fontSize: '15px'
+        }}/>
+        <br></br>
         <label htmlFor="description">Description</label>
-        <input name="description" onChange={handleChange} value={state.description} />
-
+        <input name="description" onChange={handleChange} value={state.description} style={{
+          marginTop: '10%',
+          marginBottom: '10%',
+          marginLeft: '2%',
+          height: '25px',
+          width: '300px',
+          fontSize: '15px'
+        }}/>
+        <br></br>
         <label htmlFor="author">Author</label>
-        <input name="author" onChange={handleChange} value={state.author} />
-        
+        <input name="author" onChange={handleChange} value={state.author} style={{
+          marginTop: '10%',
+          marginBottom: '10%',
+          marginLeft: '2%',
+          height: '25px',
+          width: '300px',
+          fontSize: '15px'
+        }} />
+        <br></br>
         <label htmlFor="ISBN">ISBN</label>
-        <input name="ISBN" onChange={handleChange} value={state.ISBN}
+        <input name="ISBN" onChange={handleChange} value={state.ISBN} style={{
+          marginTop: '10%',
+          marginBottom: '10%',
+          marginLeft: '2%',
+          height: '25px',
+          width: '300px',
+          fontSize: '15px'
+        }}
         />
+        <br></br>
         <label htmlFor="genre">Genre</label>
-        <input name="genre" onChange={handleChange} value={state.genre} />
-       
-        <input type="file" name="imageUrl" onChange={handleFileChange} />
+        <input name="genre" onChange={handleChange} value={state.genre} style={{
+          marginTop: '10%',
+          marginBottom: '10%',
+          marginLeft: '2%',
+          height: '25px',
+          width: '300px',
+          fontSize: '15px'
+        }}/>
+       <br></br>
+        <input type="file" name="imageUrl" onChange={handleFileChange} style={{
+          marginTop: '5%',
+          marginBottom: '10%',
+          marginLeft: '2%',
+          height: '50px',
+          width: '175px',
+        }}/>
 
-        <button type="submit">Update Book</button>
+        <button className="button" type="submit">Update Book</button>
       </form>
     </div>
   );

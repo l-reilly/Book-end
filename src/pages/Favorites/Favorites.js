@@ -15,7 +15,7 @@ function Favorites() {
       <div>
         {data?.map((favorite) => {
           return (
-            <div key={favorite._id}>
+            <div key={favorite._id} className="book-card">
               {favorite.book?.imageUrl && (
                   <a href={`/books/${favorite.book?._id}`}>
                   <img src={favorite.book?.imageUrl} alt="cover"/>
@@ -27,6 +27,8 @@ function Favorites() {
                      <h1>
                       {favorite.book?.title}
                     </h1>
+                    <h2>Author: {favorite.book?.author}</h2>
+                    <h3>Description: {favorite.book?.description}</h3>
                     </a>
                 )}
               </div>

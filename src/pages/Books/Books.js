@@ -22,13 +22,14 @@ function Books() {
         value={searchWord} onChange={handleSearch} />
       <div className="all-books">
       {data?.filter(searchedWord).map((book) => (
+        <div className="all-books">
         <div key={book._id} className="book-card">
         <img src={book.imageUrl} alt="cover" />
         <a href={`/books/${book._id}`}>{book.title}</a>
         <h3>Author: {book.author}</h3>
         <h3>Description: {book.description}</h3>
         </div>
-        
+        </div>
       ))}
       </div>
       </div>

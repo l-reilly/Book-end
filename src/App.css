@@ -59,6 +59,10 @@
   border-style: double;
   padding-top: 3%;
 }
+.book-card a {
+  padding-top: 5%;
+  font-size: 20px;
+}
 
 .book-card a:link {
   color: black;
@@ -73,7 +77,12 @@
   width: 50%;
   object-fit: cover;
 }
-
+.book-card h2{
+  font-size: 14px;
+}
+.book-card h3{
+  font-size: 16px;
+}
 
 .search {
   height: 35px;

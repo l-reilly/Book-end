@@ -9,7 +9,7 @@ function UserProfile() {
     <div className="profile-page">
       <h2>Your Profile</h2>
       <p>Email: {user?.email}</p>
-      <h3>Liked Books:</h3>
+      <h3>Favorite Books:</h3>
       <Favorites />
     </div>
   );

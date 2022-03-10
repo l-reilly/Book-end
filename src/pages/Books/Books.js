@@ -27,7 +27,7 @@ function Books() {
         <img src={book.imageUrl} alt="cover" />
         <a href={`/books/${book._id}`}>{book.title}</a>
         <h3>Author: {book.author}</h3>
-        <h3>Description: {book.description}</h3>
+        <h2>Description: {book.description}</h2>
         </div>
         </div>
       ))}

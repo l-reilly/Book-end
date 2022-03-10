@@ -19,29 +19,18 @@ function Favorites() {
 
           }
           return (
-            <div className="book-card" key={favorite._id}>
+            <div className="favorites-space">
+            <div className="book-card-favorites" key={favorite._id}>
               {favorite.book?.imageUrl && (
-                  <img src={favorite.book?.imageUrl} alt="cover"/>
-        
+                  <img src={favorite.book?.imageUrl} alt="cover"/>  
               )}
-              <div>
-                <div>
                 {favorite.book?.title && (
-                  <a
-                    href={`/books/${favorite.book?._id}`}
-                  >
-                    <h1>
-                      {favorite.book?.title}
-                    </h1>
-                    <h2>{favorite.book?.author}</h2>
+                  <a href={`/books/${favorite.book?._id}`}>
+                    <h1>{favorite.book?.title}</h1>
+                    <h2>Author :{favorite.book?.author}</h2>
                   </a>
                 )}
                  <button className="button" onClick={handleDelete}>Remove from Favorites</button>
-          </div>
-              </div>
-              <div>
-                
-           
               </div>
             </div>
             

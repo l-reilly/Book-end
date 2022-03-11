@@ -150,6 +150,7 @@
   font-family: 'Merriweather', serif;
   background-color: whitesmoke;
   border: double;
+  border-color: azure;
 }
 .book-info{
   font-family: 'Merriweather', serif;
@@ -210,5 +211,8 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 16px;
+}
+.authPage{
+  font-family: 'Merriweather', serif;
 }
 

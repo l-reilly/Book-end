@@ -8,7 +8,8 @@ function Auth({ isLogin }) {
   const submitMessage = isLogin ? "Login" : "Signup";
 
   return (
-    <div>
+    <div className="authPage">
+    <h1>Access the Library :</h1>
       <AuthForm submitMessage={submitMessage} onSubmit={onSubmit} />
     </div>
   );

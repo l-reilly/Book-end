@@ -7,8 +7,7 @@ function Main() {
 
   return (
     <div className="main-page" >
-    <div clasName="white-box">
-      <h1>Welcome to Book End {user?.email}!</h1>
+      <h1>Welcome to Bookend {user?.email}!</h1>
       <div className="catcher">
       <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bGlicmFyeXxlbnwwfHwwfHw%3D&w=1000&q=80" alt="library" />
       <a href="/books">
@@ -20,7 +19,6 @@ function Main() {
       </a>
         </div>
       </div>
-    </div>
   );
 }
     
